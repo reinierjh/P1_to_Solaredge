@@ -1,1 +1,1 @@
-# P1_to_Solaredge
+# P1 to Solaredge
