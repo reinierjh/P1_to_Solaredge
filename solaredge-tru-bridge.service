@@ -1,0 +1,14 @@
+[Unit]
+Description=Solaredge RTU bridge
+
+[Service]
+Type=simple
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=solaredge-rtu-bridge
+
+ExecStart=socat PTY,link=/dev/csTTY1,echo=0,wait-slave TCP:172.16.200.50:502,retry=5
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
